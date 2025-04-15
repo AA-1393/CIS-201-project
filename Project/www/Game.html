@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../src/css/GameCheet.css" />
+    <script type="text/javascript" src="../src/js/Script.js"></script>
+</head>
+<body>
+    <ul>
+		<li><a href="../index.html">Main</a></li>
+        <li><a class="active" href="Game.html">Game</a></li>
+		<li><a href="Aboutme.html">About me</a></li>
+		<li><a href="Contactme.html">Contact me</a></li>
+	  </ul>
+    <h1>Word Guesser</h1>
+    <table>
+        <tr>
+            <td>
+                <img id="img1" src="" alt="">
+            </td>
+            <td>
+                <img id="img2" src="" alt="">
+            </td>
+            <td>
+                <img id="img3" src="" alt="">
+            </td>
+        </tr>
+    </table>
+    <form>
+        <input type="hidden" id="word" value=" ">
+        <input type="text" id="guess" placeholder="Enter your guess here" required>
+        <input type="submit" value="Submit" onclick="checkGuess(event)">
+    </form>
+    <ul id="footer">
+		<li><a href="https://api.whatsapp.com/send?phone=966112242222"><img id="footer-sc" src="../src/images/whatsapp.png" alt=""></a></li>
+		<li><a href="https://www.instagram.com/alyamamah_university/"><img id="footer-sc" src="../src/images/instagram.png" alt="Instagram"></a></li>
+		<li><a href="https://x.com/alyamamah_uni"><img id="footer-sc" src="../src/images/twitter.png" alt="Twitter"></a></li>
+	  </ul>
+
+
+<div class="modal fade" id="correctModal" tabindex="-1" aria-labelledby="correctModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header">
+          <h5 class="modal-title text-success" id="correctModalLabel">Congratulations!</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          You guessed the word correctly! Great job!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="modal fade" id="incorrectModal" tabindex="-1" aria-labelledby="incorrectModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header">
+          <h5 class="modal-title text-danger" id="incorrectModalLabel">Try Again!</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Oops! That's not the correct word. Give it another shot!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="modal fade" id="newWordModal" tabindex="-1" aria-labelledby="newWordModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header">
+          <h5 class="modal-title" id="newWordModalLabel">New Word Set!</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          A new word has been set. Try to guess it!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Got it!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
