@@ -3,13 +3,19 @@ html, body {
     padding: 0;
     height: 100%;
 }
-
+body {
+    background-image: url(../images/background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+}
 h1{
     color: #FF6347;
     text-align: center;
     font-size: 2.5em;
     margin-bottom: 20px;
-    font-family: Arial, sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
 }
 body{
@@ -24,15 +30,15 @@ p{
     font-size: 1.2em;
     text-align: center;
     margin-top: 20px;
-    font-family: Arial, sans-serif;
-    font-size: xx-large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
 }
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #0f0f0f;
+    background-color: #1c1c1c;
     border-radius: 10px;
 }
 
@@ -41,12 +47,14 @@ float: left;
 }
 
 li a {
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 display: block;
 color: white;
 text-align: center;
 padding: 14px 16px;
 text-decoration: none;
 border-radius: 10px;
+font-size: 20px;
 }
 
 li a:hover:not(.active) {
@@ -58,7 +66,7 @@ background-color: #FF6347;
 }
 
 #footer{
-    background-color: #151515;
+    background-color: #1c1c1c;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -69,11 +77,52 @@ background-color: #FF6347;
     bottom: 0;
     width: 100%;
     padding: 10px 0;
-    
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
 }
-#footer-sc{
+.footer-sc {
     width: 50px;
     height: 50px;
     border-radius: 10px;
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer-sc:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.Header-icons{
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    margin-right: 8px;
+    vertical-align: middle;
+    background-color: #FF6347;
+    border-radius: 5px;
+}
+.about-card {
+    background-color: #1c1c1c;
+    color: white;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+p i {
+    color: #FF6347;
+    margin-right: 8px;
+}
+.icons{
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    margin-right: 8px;
+    vertical-align: middle;
+    background-color: #FF6347;
+    border-radius: 5px;
 }

@@ -1,5 +1,7 @@
 window.onload = function () {
-  nextWord();
+  if (document.getElementById("word")) {
+    nextWord(false);
+  }
 };
 
 function checkGuess(event) {
@@ -21,10 +23,10 @@ function checkGuess(event) {
     incorrectModal.show();
   }
 }
-const words = ["windows", "morning", "tie", "fall", "lion"];
+const words = ["windows", "morning", "tie", "fall","candy", "lion", "sports", "clothes", "seasons", "history"];
 let currentIndex = 0;
 
-function nextWord() {
+function nextWord(showModal = true) {
   if (currentIndex >= words.length) {
     currentIndex = 0;
   }
@@ -33,31 +35,15 @@ function nextWord() {
   document.getElementById("word").value = newWord;
   document.getElementById("guess").value = "";
 
-  if (newWord === "windows") {
-    document.getElementById("img1").src = "../src/images/Microsoft.jpg";
-    document.getElementById("img2").src = "../src/images/Skyscrapper.jpeg";
-    document.getElementById("img3").src = "../src/images/Glass.jpeg";
-  } else if (newWord === "lion") {
-    document.getElementById("img1").src = "../src/images/Jungle.jpg";
-    document.getElementById("img2").src = "../src/images/crown.jpg";
-    document.getElementById("img3").src = "../src/images/meat.jpg";
-  } else if (newWord === "morning") {
-    document.getElementById("img1").src = "../src/images/Coffe.jpg";
-    document.getElementById("img2").src = "../src/images/Sun.jpg";
-    document.getElementById("img3").src = "../src/images/Phone.jpg";
-  } else if (newWord === "tie") {
-    document.getElementById("img1").src = "../src/images/tie.jpg";
-    document.getElementById("img2").src = "../src/images/rope tie.jpeg";
-    document.getElementById("img3").src = "../src/images/race tie.png";
-  } else if (newWord === "fall") {
-    document.getElementById("img1").src = "../src/images/falling.jpg";
-    document.getElementById("img2").src = "../src/images/fall.jpg";
-    document.getElementById("img3").src = "../src/images/pumpkin.jpg";
+    document.getElementById("img1").src = "../src/images/"+newWord+"1.jpg";
+    document.getElementById("img2").src = "../src/images/"+newWord+"2.jpg";
+    document.getElementById("img3").src = "../src/images/"+newWord+"3.jpg";
+
+
+  if (showModal) {
+    const newWordModal = new bootstrap.Modal(document.getElementById('newWordModal'));
+    newWordModal.show();
   }
-
-
-  const newWordModal = new bootstrap.Modal(document.getElementById('newWordModal'));
-  newWordModal.show();
 }
 
 
